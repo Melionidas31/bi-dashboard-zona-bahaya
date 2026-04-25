@@ -1,0 +1,194 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   Dashboard BI — Tema Safety/Hazard
+   ───────────────────────────────────────────────────────────────────────── */
+
+:root {
+    --hz-red:     #DC3545;
+    --hz-orange: #FD7E14;
+    --hz-yellow: #FFC107;
+    --hz-bg:     #F4F6F9;
+    --hz-card:   #FFFFFF;
+    --hz-text:   #212529;
+    --hz-muted:  #6C757D;
+    --hz-dark:   #1F2937;
+    --hz-border: #E5E7EB;
+    --hz-success:#198754;
+}
+
+body, .bi-app {
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    background-color: var(--hz-bg);
+    color: var(--hz-text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.bi-main-content {
+    min-height: calc(100vh - 140px);
+}
+
+/* ── PAGE HEADER ─────────────────────────────────────────────────────── */
+.page-title {
+    font-weight: 700;
+    color: var(--hz-dark);
+    margin-bottom: 0.4rem;
+    letter-spacing: -0.4px;
+    border-left: 4px solid var(--hz-red);
+    padding-left: 12px;
+}
+
+.page-subtitle {
+    color: var(--hz-muted);
+    font-size: 0.92rem;
+    margin-bottom: 0;
+    padding-left: 16px;
+}
+
+/* ── KPI CARDS ──────────────────────────────────────────────────────── */
+.kpi-card {
+    border: none !important;
+    border-radius: 8px !important;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+    background: var(--hz-card);
+    overflow: hidden;
+}
+
+.kpi-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08) !important;
+}
+
+.kpi-card .card-body {
+    padding: 1.2rem 1.3rem;
+}
+
+.kpi-title {
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: var(--hz-muted);
+    margin-bottom: 0.5rem;
+}
+
+.kpi-value {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--hz-dark);
+    line-height: 1.1;
+}
+
+.kpi-unit {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--hz-muted);
+}
+
+.kpi-subtitle {
+    font-size: 0.72rem;
+    color: var(--hz-muted);
+    margin-top: 0.3rem;
+}
+
+/* ── CARDS GENERIC ──────────────────────────────────────────────────── */
+.card {
+    border-radius: 8px !important;
+    border: 1px solid var(--hz-border) !important;
+}
+
+.card-header {
+    background-color: rgba(248, 249, 250, 0.7) !important;
+    border-bottom: 1px solid var(--hz-border) !important;
+    font-size: 0.95rem;
+    color: var(--hz-dark);
+}
+
+/* ── NAVBAR ────────────────────────────────────────────────────────── */
+.navbar .nav-link {
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-weight: 500;
+    font-size: 0.92rem;
+    transition: all 0.18s ease;
+    border-radius: 6px;
+    padding: 0.5rem 0.95rem !important;
+    margin: 0 0.15rem;
+}
+
+.navbar .nav-link:hover {
+    color: white !important;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar .nav-link.active,
+.navbar .nav-pills .nav-link.active {
+    background-color: var(--hz-red) !important;
+    color: white !important;
+}
+
+/* ── FILTER SIDEBAR ────────────────────────────────────────────────── */
+.filter-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    color: var(--hz-dark);
+    margin-bottom: 0.4rem;
+    margin-top: 0.5rem;
+    display: block;
+}
+
+.form-check-input:checked {
+    background-color: var(--hz-red) !important;
+    border-color: var(--hz-red) !important;
+}
+
+/* ── DASH TABLE ────────────────────────────────────────────────────── */
+.dash-table-container {
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+/* ── PLOTLY CHART CONTAINERS ───────────────────────────────────────── */
+.js-plotly-plot .plotly {
+    border-radius: 6px;
+}
+
+/* ── IMAGES ────────────────────────────────────────────────────────── */
+img.img-fluid {
+    border: 1px solid var(--hz-border);
+    border-radius: 6px;
+    background: white;
+    padding: 4px;
+}
+
+/* ── FOOTER ────────────────────────────────────────────────────────── */
+.bi-footer {
+    background-color: var(--hz-card);
+    border-top: 1px solid var(--hz-border);
+}
+
+/* ── SCROLLBAR ─────────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--hz-border);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--hz-muted);
+}
+
+/* ── RESPONSIVE TWEAKS ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .kpi-value { font-size: 1.4rem; }
+    .page-title { font-size: 1.4rem; }
+}
+
+/* ── LOADING SPINNER ───────────────────────────────────────────────── */
+._dash-loading {
+    color: var(--hz-red);
+}
